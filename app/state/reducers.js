@@ -1,6 +1,6 @@
 import {
 	TOGGLE_LAYER,
-} from './action-types.js';
+} from './action-types';
 
 
 const toggleLayer = (state, { value }) => {

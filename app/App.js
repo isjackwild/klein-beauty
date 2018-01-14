@@ -1,21 +1,19 @@
 // NPM
 import { h } from 'preact';
-import { connect } from 'preact-redux';
+import { Provider } from 'preact-redux';
 
-import LayerSlector from './components/LayerSelector.js';
-import Canvas from './components/Canvas.js';
+import store from './state/store';
+
+import LayerSlector from './components/LayerSelector';
+import Canvas from './components/Canvas';
 
 const App = () => (
-	<main class="app">
-		<Canvas />
-		<LayerSlector />
-	</main>
+	<Provider store={store}>
+		<main class="app">
+			<Canvas />
+			<LayerSlector />
+		</main>
+	</Provider>
 );
-
-// const mapStateToProps = state => { return { ... state.site }; };
-
-// const App = connect(
-// 	mapStateToProps,
-// )(View);
 
 export default App;

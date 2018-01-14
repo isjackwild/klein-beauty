@@ -1,8 +1,8 @@
 export const LAYERS = [
-	'lipstick',
-	'hat',
-	'eyelashes',
-	'blusher',
-	'eyeliner',
-	'contacts',
+	{ name: 'lipstick' },
+	{ name: 'hat' },
+	{ name: 'eyelashes' },
+	{ name: 'blusher' },
+	{ name: 'eyeliner' },
+	{ name: 'contacts' },
 ];

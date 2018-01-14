@@ -3,12 +3,17 @@ import { connect } from 'preact-redux';
 import _ from 'lodash';
 
 class Comp extends Component {
-	componentDidUpdate(lastProps) {
+	componentDidMount() {
+		console.log(this.canvas);
+		this.ctx = this.canvas.getContext('2d');
+		this.draw();
+	}
+
+	componentDidUpdate() {
 		this.draw();
 	}
 
 	draw() {
-		console.log('clear canvas');
 		_.map(this.props.layers, (l, key) => {
 			if (l) {
 				console.log('draw layer', key);
@@ -17,7 +22,7 @@ class Comp extends Component {
 	}
 
 	render() {
-		return <canvas></canvas>;
+		return <canvas class="canvas" ref={ref => this.canvas = ref}></canvas>;
 	}
 }
 

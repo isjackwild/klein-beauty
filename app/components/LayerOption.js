@@ -2,7 +2,7 @@
 import { h } from 'preact';
 import { connect } from 'preact-redux';
 
-import { toggleLayer } from '../state/actions.js';
+import { toggleLayer } from '../state/actions';
 
 const View = ({ name, isActive, onClick }) => {
 	return (
