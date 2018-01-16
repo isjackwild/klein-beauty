@@ -7,9 +7,11 @@ import LayerOption from './LayerOption';
 
 const LayerSelector = () => (
 	<div class="layer-selector">
-		{
-			LAYERS.map(l => <LayerOption key={l.name} name={l.name} />)
-		}
+		<ul class="layer-selector__scroller">
+			{
+				LAYERS.map(l => <LayerOption key={l.name} layer={l} />)
+			}
+		</ul>
 	</div>
 );
 

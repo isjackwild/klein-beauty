@@ -61,6 +61,7 @@ const loadAudio = (audioSrc) => {
 
 // TODO refactor using promises or async
 export const init = () => {
+	return;
 	window.addEventListener('touchstart', unlockAudio);
 	audioContext = new window.AudioContext();
 	const promises = LAYERS.reduce(({ audioSrc }) => {

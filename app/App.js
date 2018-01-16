@@ -1,19 +1,25 @@
 // NPM
 import { h } from 'preact';
-import { Provider } from 'preact-redux';
+import { connect } from 'preact-redux';
 
-import store from './state/store';
+import LayerSelector from './components/LayerSelector';
+import Portrait from './components/Portrait';
 
-import LayerSlector from './components/LayerSelector';
-import Canvas from './components/Canvas';
-
-const App = () => (
-	<Provider store={store}>
-		<main class="app">
-			<Canvas />
-			<LayerSlector />
+const View = ({ isPhone }) => (
+	<div class={`wrapper-background wrapper-background--${isPhone ? 'hidden' : 'visible'}`}>
+		<main class={`app app--${isPhone ? 'phone' : 'desktop'}`}>
+			<Portrait />
+			<LayerSelector />
 		</main>
-	</Provider>
+	</div>
 );
+
+const mapStateToProps = ({ isPhone }) => {
+	return { isPhone };
+};
+
+const App = connect(
+	mapStateToProps,
+)(View);
 
 export default App;

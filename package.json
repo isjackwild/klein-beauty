@@ -16,6 +16,7 @@
   "dependencies": {
     "gulp-util": "^3.0.7",
     "lodash": "^4.13.1",
+    "mobile-detect": "^1.4.1",
     "preact": "^8.2.5",
     "preact-redux": "^2.0.3",
     "pubsub-js": "^1.5.3",
