@@ -23,7 +23,6 @@ const mapStateToProps = (state, { layer }) => {
 };
 
 const mapDispatchToProps = (dispatch, { layer }) => {
-	console.log(layer.name);
 	return {
 		onClick: () => {
 			dispatch(toggleLayer(layer.name));

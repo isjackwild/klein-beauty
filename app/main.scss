@@ -8,7 +8,20 @@ html, body {
 	margin: 0;
 }
 
-.wrapper-background {
+.wrapper-background--visible {
+	background-image: url('/assets/images/background-desktop-hand.png'), url('/assets/images/background-desktop.jpg');
+	background-size: auto 100%, cover;
+	background-repeat: no-repeat;
+	background-position: center, center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+
+.phone-surround {
 
 }
 
@@ -21,15 +34,14 @@ html, body {
 	margin: auto;
 	background-image: url('/assets/images/portrait/background.jpg');
 	background-size: cover;
-	border: 1px solid black;
 }
 
 .app--phone {
 }
 
 .app--desktop {
-	width: 375px;
-	height: 667px;
+	width: 54vh;
+	height: 96vh;
 }
 
 .portrait,
@@ -39,18 +51,24 @@ html, body {
 	left: 0;
 	bottom: 0;
 	right: 0;
+	background-size: cover;
 	// background: orange;
 }
 
+.portrait {
+	background-image: url('/assets/images/portrait/klein.png');
+
+}
+
 .portrait__layer {
-	transition: opacity 0.25s ease-out;
+	transition: opacity 0.15s ease-out;
 }
 
 .portrait__layer--inactive {
 	opacity: 0;
 }
 
-.portrait__layer--inactive {
+.portrait__layer--active {
 	opacity: 1;
 }
 

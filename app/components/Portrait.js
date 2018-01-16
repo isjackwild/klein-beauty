@@ -9,7 +9,7 @@ import PortraitLayer from './PortraitLayer';
 const LayerSelector = () => (
 	<div class="portrait">
 		{
-			LAYERS.map(l => <PortraitLayer key={l.name} name={l.name} />)
+			LAYERS.map(l => <PortraitLayer key={l.name} layer={l} />)
 		}
 	</div>
 );

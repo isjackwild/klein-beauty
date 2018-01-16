@@ -4,17 +4,18 @@ import { connect } from 'preact-redux';
 
 import { toggleLayer } from '../state/actions';
 
-const View = ({ name, isActive }) => {
+const View = ({ name, layerSrc, isActive }) => {
 	return (
 		<div
 			class={`portrait__layer portrait__layer--${name} portrait__layer--${isActive ? 'active' : 'inactive'}`}
 			data-active={isActive}
+			style={{ backgroundImage: `url('${layerSrc}')`}}
 		></div>
 	);
 };
 
-const mapStateToProps = (state, { name }) => {
-	return { name, isActive: state.layers[name] };
+const mapStateToProps = (state, { layer  }) => {
+	return { ...layer, isActive: state.layers[layer.name] };
 };
 
 const LayerOption = connect(
