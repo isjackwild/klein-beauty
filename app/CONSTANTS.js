@@ -1,3 +1,7 @@
+export const OTHER_IMAGE_ASSETS = [
+	'assets/images/portrait/klein.png',
+];
+
 export const LAYERS = [
 	{
 		name: 'grill',
@@ -18,15 +22,6 @@ export const LAYERS = [
 		layerType: 'sprite',
 	},
 	{
-		name: 'lashes',
-		audioSrc: 'assets/audio/lashes.mp3',
-		iconSrc: 'assets/images/ui/makeup-lashes.png',
-		iconActiveSrc: 'assets/images/ui/makeup-lashes-on.png',
-		iconFormat: 'wide',
-		layerSrc: 'assets/images/portrait/klein-layer-lashes.png',
-		layerType: 'image',
-	},
-	{
 		name: 'eyeshadow',
 		audioSrc: 'assets/audio/eyeshadow.mp3',
 		iconSrc: 'assets/images/ui/makeup-eyeshadow.png',
@@ -36,11 +31,20 @@ export const LAYERS = [
 		layerType: 'image',
 	},
 	{
+		name: 'lashes',
+		audioSrc: 'assets/audio/lashes.mp3',
+		iconSrc: 'assets/images/ui/makeup-lashes.png',
+		iconActiveSrc: 'assets/images/ui/makeup-lashes-on.png',
+		iconFormat: 'wide',
+		layerSrc: 'assets/images/portrait/klein-layer-lashes.png',
+		layerType: 'image',
+	},
+	{
 		name: 'eyebrow',
 		audioSrc: 'assets/audio/eyebrow.mp3',
 		iconSrc: 'assets/images/ui/makeup-eyebrow.png',
 		iconActiveSrc: 'assets/images/ui/makeup-eyebrow-on.png',
-		iconFormat: 'tall',
+		iconFormat: 'regular',
 		layerSrc: 'assets/images/portrait/klein-layer-eyebrow.png',
 		layerType: 'image',
 	},
@@ -49,7 +53,7 @@ export const LAYERS = [
 		audioSrc: 'assets/audio/eyes.mp3',
 		iconSrc: 'assets/images/ui/makeup-contacts.png',
 		iconActiveSrc: 'assets/images/ui/makeup-contacts-on.png',
-		iconFormat: 'tall',
+		iconFormat: 'regular',
 		layerSrc: 'assets/images/portrait/klein-layer-grill.png',
 		layerType: 'sprite',
 	},

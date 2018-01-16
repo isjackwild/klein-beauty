@@ -9,6 +9,7 @@ const md = new MobileDetect(window.navigator.userAgent);
 const INITIAL = {
 	layers: {},
 	isPhone: md.phone() || false,
+	isLoaded: false,
 };
 
 LAYERS.forEach(l => INITIAL.layers[l.name] = false);
