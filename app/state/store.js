@@ -8,8 +8,10 @@ import { LAYERS } from '../CONSTANTS';
 const md = new MobileDetect(window.navigator.userAgent);
 const INITIAL = {
 	layers: {},
-	isPhone: md.phone() || false,
+	isPhone: md.phone(),
+	isDesktop: !md.mobile(),
 	isLoaded: false,
+	backgroundOffset: 0,
 };
 
 LAYERS.forEach(l => INITIAL.layers[l.name] = false);

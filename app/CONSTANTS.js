@@ -67,3 +67,5 @@ export const LAYERS = [
 		layerType: 'image',
 	},
 ];
+
+export const MIN_LOAD_TIME = 2222;

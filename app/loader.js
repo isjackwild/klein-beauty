@@ -1,13 +1,19 @@
 import _ from 'lodash';
-import { LAYERS, OTHER_IMAGE_ASSETS } from './CONSTANTS';
+import { LAYERS, OTHER_IMAGE_ASSETS, MIN_LOAD_TIME } from './CONSTANTS';
 import { onLoaded as onLoadedAction } from './state/actions';
 import store from './state/store';
 
 let toLoad = 0;
+let allLoaded = false;
+let minLoadTimeReached = false;
+let loadCompleted = false;
 
 const onAllLoaded = () => {
-	console.log('all loaded');
-	store.dispatch(onLoadedAction());
+	allLoaded = true;
+	if (minLoadTimeReached && !loadCompleted) {
+		loadCompleted = true;
+		store.dispatch(onLoadedAction());
+	}
 };
 
 const onLoaded = () => {
@@ -15,7 +21,19 @@ const onLoaded = () => {
 	if (toLoad === 0) onAllLoaded();
 };
 
+const startMinLoadTimeTimer = () => {
+	setTimeout(() => {
+		minLoadTimeReached = true;
+		if (allLoaded && !loadCompleted) {
+			loadCompleted = true;
+			store.dispatch(onLoadedAction());
+		}
+	}, MIN_LOAD_TIME);
+};
+
 const loadImages = () => {
+	startMinLoadTimeTimer();
+
 	const allImages = _.reduce(LAYERS, (result, l) => {
 		const { iconSrc, iconActiveSrc, layerSrc } = l;
 		result.push(iconSrc, iconActiveSrc, layerSrc);
@@ -31,8 +49,6 @@ const loadImages = () => {
 		image.onerror = onLoaded;
 		image.src = src;
 	});
-
-	console.log(allImages);
 };
 
 export const init = () => {
