@@ -4,6 +4,15 @@ export const OTHER_IMAGE_ASSETS = [
 
 export const LAYERS = [
 	{
+		name: 'lips',
+		audioSrc: 'assets/audio/lips.mp3',
+		iconSrc: 'assets/images/ui/makeup-lipgloss.png',
+		iconActiveSrc: 'assets/images/ui/makeup-lipgloss-on.png',
+		iconFormat: 'tall',
+		layerSrc: 'assets/images/portrait/Klein-Layer-Lips/klein-layer-lips.gif',
+		layerType: 'image',
+	},
+	{
 		name: 'grill',
 		audioSrc: 'assets/audio/grill.mp3',
 		iconSrc: 'assets/images/ui/makeup-grill.png',
@@ -11,15 +20,6 @@ export const LAYERS = [
 		iconFormat: 'wide',
 		layerSrc: 'assets/images/portrait/klein-layer-grill.png',
 		layerType: 'image',
-	},
-	{
-		name: 'lips',
-		audioSrc: 'assets/audio/lips.mp3',
-		iconSrc: 'assets/images/ui/makeup-lipgloss.png',
-		iconActiveSrc: 'assets/images/ui/makeup-lipgloss-on.png',
-		iconFormat: 'tall',
-		layerSrc: 'assets/images/portrait/klein-layer-grill.png',
-		layerType: 'sprite',
 	},
 	{
 		name: 'eyeshadow',

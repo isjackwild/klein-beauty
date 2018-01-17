@@ -4,13 +4,23 @@ import { connect } from 'preact-redux';
 
 import { toggleLayer } from '../state/actions';
 
-const View = ({ name, layerSrc, isActive }) => {
+const View = ({ name, layerType, layerSrc, isActive }) => {
 	return (
 		<div
 			class={`portrait__layer portrait__layer--${name} portrait__layer--${isActive ? 'active' : 'inactive'}`}
 			data-active={isActive}
-			style={{ backgroundImage: `url('${layerSrc}')`}}
-		></div>
+		>
+			{
+				(() => {
+					switch(layerType){
+						case 'image':
+							return <img class="portrait__layer-image" src={layerSrc} />;
+						default:
+							return null;
+					}
+				})()
+			}
+		</div>
 	);
 };
 

@@ -59,12 +59,7 @@ html, body {
 	bottom: 0;
 	right: 0;
 	background-size: cover;
-	// background: orange;
-}
-
-.portrait {
-	background-image: url('/assets/images/portrait/klein.png');
-
+	overflow: hidden;
 }
 
 .portrait__layer {
@@ -77,6 +72,15 @@ html, body {
 
 .portrait__layer--active {
 	opacity: 1;
+}
+
+.portrait__layer-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 100%;
+	width: auto;
+	transform: translate(-50%, -50%);
 }
 
 .layer-selector {
