@@ -2,6 +2,8 @@ export const OTHER_IMAGE_ASSETS = [
 	'assets/images/portrait/klein.png',
 ];
 
+export const PORTRAIT_SRC = OTHER_IMAGE_ASSETS[0];
+
 export const LAYERS = [
 	{
 		name: 'lips',
