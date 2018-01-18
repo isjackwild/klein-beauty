@@ -59,19 +59,26 @@ const loadAudio = (audioSrc) => {
 	});
 };
 
+
+
 // TODO refactor using promises or async
 export const init = () => {
-	return;
 	window.addEventListener('touchstart', unlockAudio);
 	audioContext = new window.AudioContext();
-	const promises = LAYERS.reduce(({ audioSrc }) => {
-		return createAudioPannerNode(audioSrc);
+
+	const promises = LAYERS.reduce((arr, { audioSrc }) => {
+		arr.push(loadAudio(audioSrc));
+		return arr;
 	}, []);
-	Promise.all(promises).then((tracks, i) => {
-		tracks.forEach(track => {
+
+	console.log(promises);
+
+	Promise.all(promises).then((result) => {
+		result.forEach((track, i) => {
 			tracks[LAYERS[i].name] = track;
-			track.sourceNode.source.start(0);
+			track.sourceNode.start(0);
 		});
+		console.log(tracks);
 	}).catch(err => console.error(err));
 
 	store.subscribe(onUpdateStore);

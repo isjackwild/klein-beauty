@@ -7,7 +7,7 @@ export const PORTRAIT_SRC = OTHER_IMAGE_ASSETS[0];
 export const LAYERS = [
 	{
 		name: 'lips',
-		audioSrc: 'assets/audio/lips.mp3',
+		audioSrc: 'assets/audio/A1.mp3',
 		iconSrc: 'assets/images/ui/makeup-lipgloss.png',
 		iconActiveSrc: 'assets/images/ui/makeup-lipgloss-on.png',
 		iconFormat: 'tall',
@@ -16,7 +16,7 @@ export const LAYERS = [
 	},
 	{
 		name: 'grill',
-		audioSrc: 'assets/audio/grill.mp3',
+		audioSrc: 'assets/audio/A2.mp3',
 		iconSrc: 'assets/images/ui/makeup-grill.png',
 		iconActiveSrc: 'assets/images/ui/makeup-grill-on.png',
 		iconFormat: 'wide',
@@ -25,7 +25,7 @@ export const LAYERS = [
 	},
 	{
 		name: 'eyeshadow',
-		audioSrc: 'assets/audio/eyeshadow.mp3',
+		audioSrc: 'assets/audio/A3.mp3',
 		iconSrc: 'assets/images/ui/makeup-eyeshadow.png',
 		iconActiveSrc: 'assets/images/ui/makeup-eyeshadow-on.png',
 		iconFormat: 'tall',
@@ -34,7 +34,7 @@ export const LAYERS = [
 	},
 	{
 		name: 'lashes',
-		audioSrc: 'assets/audio/lashes.mp3',
+		audioSrc: 'assets/audio/A4.mp3',
 		iconSrc: 'assets/images/ui/makeup-lashes.png',
 		iconActiveSrc: 'assets/images/ui/makeup-lashes-on.png',
 		iconFormat: 'wide',
@@ -43,7 +43,7 @@ export const LAYERS = [
 	},
 	{
 		name: 'eyebrow',
-		audioSrc: 'assets/audio/eyebrow.mp3',
+		audioSrc: 'assets/audio/A5.mp3',
 		iconSrc: 'assets/images/ui/makeup-eyebrow.png',
 		iconActiveSrc: 'assets/images/ui/makeup-eyebrow-on.png',
 		iconFormat: 'regular',
@@ -52,7 +52,7 @@ export const LAYERS = [
 	},
 	{
 		name: 'eyes',
-		audioSrc: 'assets/audio/eyes.mp3',
+		audioSrc: 'assets/audio/A6.mp3',
 		iconSrc: 'assets/images/ui/makeup-contacts.png',
 		iconActiveSrc: 'assets/images/ui/makeup-contacts-on.png',
 		iconFormat: 'regular',
@@ -61,7 +61,7 @@ export const LAYERS = [
 	},
 	{
 		name: 'fenty',
-		audioSrc: 'assets/audio/fenty.mp3',
+		audioSrc: 'assets/audio/A7.mp3',
 		iconSrc: 'assets/images/ui/makeup-grill.png',
 		iconActiveSrc: 'assets/images/ui/makeup-grill-on.png',
 		iconFormat: 'wide',
