@@ -58,7 +58,7 @@ html, body {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background-size: cover;
+	background-size: auto 100%;
 	overflow: hidden;
 }
 
@@ -84,12 +84,8 @@ html, body {
 }
 
 @keyframes sprite {
-	0% {
-		background-position: 0 0;
-	}
-
 	100% {
-		background-position: calc(100% - 375px) 0;
+		transform: translateX(-100%);
 	}
 }
 
@@ -99,13 +95,18 @@ html, body {
 	left: 50%;
 	height: 100%;
 	transform: translate(-50%, -50%);
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: 0 0;
+}
+
+.portrait__layer-sprite-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: auto;
 	animation-duration: 2s;
-	animation-timing-function: steps(10);
+	animation-timing-function: steps(15);
+	animation-iteration-count: infinite;
 	animation-name: sprite;
-	animation-play-state: paused;
 }
 
 .portrait__layer-sprite-spacer {
@@ -210,6 +211,21 @@ html, body {
 .loader {
 	position: absolute;
 	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(#443a2e, 0.8);
+	transition: background 0.6s ease-in;
+}
+
+.loader--hidden {
+	pointer-events: none;
+	background: rgba(#666, 0);	
+}
+
+.loader__inner {
+	position: absolute;
+	top: 0;
 	left: -50px;
 	bottom: 0;
 	right: -50px;
@@ -222,8 +238,8 @@ html, body {
 	box-shadow: 0 3px 20px rgba(#000, 0.25);
 }
 
-.loader--hidden {
-	transform: translateY(-109%) rotate(-5deg);
+.loader__inner--hidden {
+	transform: translateY(-109%) rotate(-4deg);
 	pointer-events: none;
 }
 

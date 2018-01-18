@@ -17,8 +17,9 @@ const View = ({ name, layerType, layerSrc, isActive }) => {
 						return <img class="portrait__layer-image" src={layerSrc} />;
 					case 'sprite':
 						return (
-							<div class="portrait__layer-sprite" style={{ backgroundImage: `url('${layerSrc}')` }}>
-								<img class="portrait__layer-sprite-spacer" src={PORTRAIT_SRC} />;
+							<div class="portrait__layer-sprite">
+								<img class="portrait__layer-sprite-image" src={layerSrc} />
+								<img class="portrait__layer-sprite-spacer" src={PORTRAIT_SRC} />
 							</div>
 						);
 					default:

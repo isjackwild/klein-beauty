@@ -5,8 +5,10 @@ import { connect } from 'preact-redux';
 const View = ({ isVisible }) => {
 	return (
 		<div class={`loader loader--${isVisible ? 'visible' : 'hidden'}`}>
-			<img class="loader__image" src="assets/images/ui/loading-klein.jpg" />
-			<img class="loader__progress" src="assets/images/ui/loading-bar.jpg" />
+			<div class={`loader__inner loader__inner--${isVisible ? 'visible' : 'hidden'}`}>
+				<img class="loader__image" src="assets/images/ui/loading-klein.jpg" />
+				<img class="loader__progress" src="assets/images/ui/loading-bar.jpg" />
+			</div>
 		</div>
 	);
 };

@@ -56,7 +56,7 @@ export const LAYERS = [
 		iconSrc: 'assets/images/ui/makeup-contacts.png',
 		iconActiveSrc: 'assets/images/ui/makeup-contacts-on.png',
 		iconFormat: 'regular',
-		layerSrc: 'assets/images/portrait/klein-layer-grill.png',
+		layerSrc: 'assets/images/portrait/klein-layer-contacts/klein-layer-contacts--sprite-2.png',
 		layerType: 'sprite',
 	},
 	{
