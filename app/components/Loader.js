@@ -2,7 +2,7 @@
 import { h } from 'preact';
 import { connect } from 'preact-redux';
 
-const View = ({ isVisible }) => {
+const View = ({ isVisible, loadProgress }) => {
 	return (
 		<div class={`loader loader--${isVisible ? 'visible' : 'hidden'}`}>
 			<div class={`loader__inner loader__inner--${isVisible ? 'visible' : 'hidden'}`}>
@@ -13,8 +13,8 @@ const View = ({ isVisible }) => {
 	);
 };
 
-const mapStateToProps = (state) => {
-	return { isVisible: !state.isLoaded };
+const mapStateToProps = ({ isLoaded, loadProgress}) => {
+	return { isVisible: !isLoaded, loadProgress };
 };
 
 const Loader = connect(

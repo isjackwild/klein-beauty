@@ -11,6 +11,7 @@ const INITIAL = {
 	isPhone: md.phone(),
 	isDesktop: !md.mobile(),
 	isLoaded: false,
+	loadProgress: 0,
 	backgroundOffset: 0,
 };
 

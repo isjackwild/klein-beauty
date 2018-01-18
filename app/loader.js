@@ -1,9 +1,10 @@
 import _ from 'lodash';
 import { LAYERS, OTHER_IMAGE_ASSETS, MIN_LOAD_TIME } from './CONSTANTS';
-import { onLoaded as onLoadedAction } from './state/actions';
+import { onLoaded as onLoadedAction, onLoadProgress } from './state/actions';
 import store from './state/store';
 
 let toLoad = 0;
+let numLoaded = 0;
 let allLoaded = false;
 let minLoadTimeReached = false;
 let loadCompleted = false;
@@ -16,9 +17,10 @@ const onAllLoaded = () => {
 	}
 };
 
-const onLoaded = () => {
-	toLoad--;
-	if (toLoad === 0) onAllLoaded();
+export const onLoaded = () => {
+	numLoaded++;
+	if (toLoad !== 0) store.dispatch(onLoadProgress(numLoaded / toLoad));
+	if (numLoaded === toLoad) onAllLoaded();
 };
 
 const startMinLoadTimeTimer = () => {
@@ -41,7 +43,7 @@ const loadImages = () => {
 	}, []);
 	allImages.push(...OTHER_IMAGE_ASSETS);
 
-	toLoad = allImages.length;
+	toLoad += allImages.length;
 
 	allImages.forEach(src => {
 		const image = new Image();
@@ -49,6 +51,10 @@ const loadImages = () => {
 		image.onerror = onLoaded;
 		image.src = src;
 	});
+};
+
+export const addAudioAssets = (count) => {
+	toLoad += count;
 };
 
 export const init = () => {

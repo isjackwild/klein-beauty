@@ -2,6 +2,7 @@ import {
 	TOGGLE_LAYER,
 	ON_LOADED,
 	SET_BG_OFFSET,
+	ON_LOAD_PROGRESS,
 } from './action-types';
 
 
@@ -13,6 +14,10 @@ const toggleLayer = (state, { value }) => {
 	}
 
 	return newState;
+};
+
+const onLoadProgress = (state, { value }) => {
+	return { ...state, loadProgress: value };
 };
 
 const onLoaded = (state) => {
@@ -27,5 +32,6 @@ const REDUCERS = {};
 REDUCERS[TOGGLE_LAYER] = toggleLayer;
 REDUCERS[ON_LOADED] = onLoaded;
 REDUCERS[SET_BG_OFFSET] = setBgOffset;
+REDUCERS[ON_LOAD_PROGRESS] = onLoadProgress;
 
 export default REDUCERS;

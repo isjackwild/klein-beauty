@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import { LAYERS } from './CONSTANTS';
 
+import { addAudioAssets, onLoaded as onLoadedAsset } from './loader';
+
 import store from './state/store';
 
 window.AudioContext = window.webkitAudioContext || window.mozAudioContext || window.msAudioContext || window.AudioContext;
@@ -36,7 +38,7 @@ const createAudioPannerNode = (buffer) => {
 	sourceNode.loop = true;
 	sourceNode.buffer = buffer;
 	gainNode.gain.value = 0;
-	
+
 	return { sourceNode, gainNode };
 };
 
@@ -64,6 +66,7 @@ const loadAudio = (audioSrc) => {
 
 
 // TODO refactor using promises or async
+// TODO load in loader.js;
 export const init = () => {
 	window.addEventListener('touchstart', unlockAudio);
 	audioContext = new window.AudioContext();

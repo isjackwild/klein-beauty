@@ -9,7 +9,7 @@ html, body {
 }
 
 .background__desert {
-	background-image: url('/assets/images/background-desktop.jpg');
+	background-image: url('../images/background-desktop.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -21,7 +21,7 @@ html, body {
 }
 
 .background__surround {
-	background-image: url('/assets/images/background-desktop-hand.png');
+	background-image: url('../images/background-desktop-hand.png');
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -39,7 +39,7 @@ html, body {
 	bottom: 0;
 	right: 0;
 	margin: auto;
-	background-image: url('/assets/images/portrait/background.jpg');
+	background-image: url('../images/portrait/background.jpg');
 	background-size: cover;
 }
 
@@ -124,12 +124,27 @@ html, body {
 	width: 100%;
 	height: 220px;
 	overflow: scroll;
-	background-image: url('/assets/images/ui/shelf.png');
+	background-image: url('../images/ui/shelf.png');
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: bottom left;
 	-webkit-overflow-scrolling: touch;
 	padding-bottom: 15px;
+	cursor: pointer;
+}
+
+.layer-selector--desktop {
+	// overflow: hidden;
+	cursor: -webkit-grab;
+	cursor: -moz-grab;
+	cursor: grab;
+}
+
+.layer-selector--desktop:active {
+	// overflow: hidden;
+	cursor: -webkit-grabbing;
+	cursor: -moz-grabbing;
+	cursor: grabbing;
 }
 
 .layer-selector__transform {
@@ -151,8 +166,6 @@ html, body {
 	display: inline-block;
 	margin: 0;
 	height: 100%;
-	display: inline-flex;
-	align-items: flex-end;
 }
 
 .layer-option {

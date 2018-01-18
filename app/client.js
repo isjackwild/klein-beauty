@@ -6,7 +6,6 @@ import store from './state/store';
 import { setBgOffset } from './state/actions';
 
 import App from './App.js';
-import { init as initAudio } from './audio-controller';
 import { init as initLoader } from './loader.js';
 
 let then, isFocused = true;
@@ -16,9 +15,11 @@ const animate = () => {
 	const now = new Date().getTime();
 	const correction = then ? (now - then) / 16.66 : 1;
 
-	offsetCurrent += ((offsetTarget - offsetCurrent) * (0.05 * correction));
-	then = now;
-	if (isFocused) store.dispatch(setBgOffset(offsetCurrent));
+	if (isFocused) {
+		offsetCurrent += ((offsetTarget - offsetCurrent) * (0.05 * correction));
+		then = now;
+		store.dispatch(setBgOffset(offsetCurrent));
+	}
 	requestAnimationFrame(animate);
 };
 
@@ -44,7 +45,6 @@ const kickIt = () => {
 	), document.body);
 
 	initLoader();
-	initAudio();
 
 	if (store.getState().isDesktop) {
 		window.addEventListener('mousemove', onMouseMove);
