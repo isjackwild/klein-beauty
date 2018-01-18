@@ -33,7 +33,10 @@ const createAudioPannerNode = (buffer) => {
 	sourceNode.connect(gainNode);
 	gainNode.connect(audioContext.destination);
 
+	sourceNode.loop = true;
 	sourceNode.buffer = buffer;
+	gainNode.gain.value = 0;
+	
 	return { sourceNode, gainNode };
 };
 
@@ -60,7 +63,6 @@ const loadAudio = (audioSrc) => {
 };
 
 
-
 // TODO refactor using promises or async
 export const init = () => {
 	window.addEventListener('touchstart', unlockAudio);
@@ -71,14 +73,11 @@ export const init = () => {
 		return arr;
 	}, []);
 
-	console.log(promises);
-
 	Promise.all(promises).then((result) => {
 		result.forEach((track, i) => {
 			tracks[LAYERS[i].name] = track;
 			track.sourceNode.start(0);
 		});
-		console.log(tracks);
 	}).catch(err => console.error(err));
 
 	store.subscribe(onUpdateStore);
