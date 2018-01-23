@@ -262,5 +262,26 @@ html, body {
 }
 
 .loader__progress {
-	width: 600px;
+	max-width: 80vw;
+	position: relative;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.loader__progress-surround {
+	width: 500px;
+	max-width: 80vw;
+	position: relative;
+}
+
+
+.loader__progress-bar {
+	position: absolute;
+	top: 17%;
+	left: 1%;
+	height: 44%;
+	background: #fff;
+	border-radius: 111px;
+	max-width: 98%;
 }
