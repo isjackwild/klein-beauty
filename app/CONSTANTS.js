@@ -1,8 +1,10 @@
 export const OTHER_IMAGE_ASSETS = [
 	'assets/images/portrait/klein.png',
+	'assets/images/portrait/background-glow/background-glow--sprite--01--small.jpg',
 ];
 
 export const PORTRAIT_SRC = OTHER_IMAGE_ASSETS[0];
+export const BG_SPRITE_SRC = OTHER_IMAGE_ASSETS[1];
 
 export const LAYERS = [
 	{
