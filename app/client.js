@@ -38,6 +38,7 @@ const onBlur = () => {
 };
 
 const kickIt = () => {
+	console.log("MINIFY ASSETS");
 	render((
 		<Provider store={store}>
 			<App />

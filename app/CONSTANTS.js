@@ -11,7 +11,7 @@ export const LAYERS = [
 		iconSrc: 'assets/images/ui/makeup-lipgloss.png',
 		iconActiveSrc: 'assets/images/ui/makeup-lipgloss-on.png',
 		iconFormat: 'tall',
-		layerSrc: 'assets/images/portrait/Klein-Layer-Lips/klein-layer-lips.gif',
+		layerSrc: 'assets/images/portrait/Klein-Layer-Lips/klein-layer-lips--01.gif',
 		layerType: 'image',
 	},
 	{
@@ -56,7 +56,7 @@ export const LAYERS = [
 		iconSrc: 'assets/images/ui/makeup-contacts.png',
 		iconActiveSrc: 'assets/images/ui/makeup-contacts-on.png',
 		iconFormat: 'regular',
-		layerSrc: 'assets/images/portrait/klein-layer-contacts/klein-layer-contacts--sprite-2.png',
+		layerSrc: 'assets/images/portrait/klein-layer-contacts/klein-layer-contacts--sprite-3.png',
 		layerType: 'sprite',
 	},
 	{
