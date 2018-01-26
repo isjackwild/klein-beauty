@@ -64,9 +64,9 @@ export const LAYERS = [
 	{
 		name: 'fenty',
 		audioSrc: 'assets/audio/A7.mp3',
-		iconSrc: 'assets/images/ui/makeup-grill.png',
-		iconActiveSrc: 'assets/images/ui/makeup-grill-on.png',
-		iconFormat: 'wide',
+		iconSrc: 'assets/images/ui/makeup-fenty.png',
+		iconActiveSrc: 'assets/images/ui/makeup-fenty-on.png',
+		iconFormat: 'tall',
 		layerSrc: 'assets/images/portrait/klein-layer-fenty.png',
 		layerType: 'image',
 	},

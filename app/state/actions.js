@@ -3,6 +3,7 @@ import {
 	ON_LOADED,
 	SET_BG_OFFSET,
 	ON_LOAD_PROGRESS,
+	TOGGLE_CREDITS,
 } from './action-types';
 
 export const toggleLayer = value => {
@@ -19,4 +20,8 @@ export const onLoaded = () => {
 
 export const setBgOffset = value => {
 	return { type: SET_BG_OFFSET, value };
+};
+
+export const toggleCredits = () => {
+	return { type: TOGGLE_CREDITS };
 };

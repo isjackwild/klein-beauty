@@ -38,7 +38,7 @@ const onBlur = () => {
 };
 
 const kickIt = () => {
-	console.log("MINIFY ASSETS");
+	console.log("MINIFY ASSETS, REPLACE BG SPRITE W GIF if okay quality, CREDITS LINKS, TWITTER/FB CARD");
 	render((
 		<Provider store={store}>
 			<App />

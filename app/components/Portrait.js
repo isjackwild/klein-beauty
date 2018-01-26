@@ -6,7 +6,7 @@ import { LAYERS, PORTRAIT_SRC, BG_SPRITE_SRC } from '../CONSTANTS';
 import PortraitLayer from './PortraitLayer';
 
 
-const LayerSelector = () => (
+const View = ({ isCreditsVisible }) => (
 	<div class="portrait">
 		<div class="portrait__layer portrait__layer--bg portrait__layer--active" data-active>
 			<div class="portrait__layer-sprite">
@@ -19,4 +19,13 @@ const LayerSelector = () => (
 	</div>
 );
 
-export default LayerSelector;
+const mapStateToProps = ({ isCreditsVisible }) => {
+	return { isCreditsVisible };
+};
+
+const Portrait = connect(
+	mapStateToProps,
+)(View);
+
+
+export default Portrait;

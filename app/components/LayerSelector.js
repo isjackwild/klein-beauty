@@ -31,9 +31,9 @@ class Comp extends Component {
 		}, 0);
 	}
 
-	render({ isVisible, isDesktop }) {
+	render({ isVisible, isDesktop, isCreditsVisible }) {
 		return (
-			<div class={`layer-selector layer-selector--${isDesktop ? 'desktop' : 'mobile'}`}>
+			<div class={`layer-selector layer-selector--${isDesktop ? 'desktop' : 'mobile'} ${isCreditsVisible ? 'layer-selector--down' : ''}`}>
 				<div
 					class={`layer-selector__transform layer-selector__transform--${isVisible ? 'inactive' : 'active' } layer-selector__transform--${isDesktop ? 'desktop' : 'mobile' }`}
 					ref={r => this.el = r}
@@ -47,8 +47,8 @@ class Comp extends Component {
 	}
 }
 
-const mapStateToProps = ({ isLoaded, isDesktop }) => {
-	return { isVisible: isLoaded, isDesktop };
+const mapStateToProps = ({ isLoaded, isDesktop, isCreditsVisible }) => {
+	return { isVisible: isLoaded, isDesktop, isCreditsVisible };
 };
 
 const LayerSelector = connect(

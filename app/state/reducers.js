@@ -3,6 +3,7 @@ import {
 	ON_LOADED,
 	SET_BG_OFFSET,
 	ON_LOAD_PROGRESS,
+	TOGGLE_CREDITS,
 } from './action-types';
 
 
@@ -28,10 +29,16 @@ const setBgOffset = (state, { value }) => {
 	return { ...state, backgroundOffset: value };
 };
 
+
+const toggleCredits = (state) => {
+	return { ...state, isCreditsVisible: !state.isCreditsVisible };
+};
+
 const REDUCERS = {};
 REDUCERS[TOGGLE_LAYER] = toggleLayer;
 REDUCERS[ON_LOADED] = onLoaded;
 REDUCERS[SET_BG_OFFSET] = setBgOffset;
 REDUCERS[ON_LOAD_PROGRESS] = onLoadProgress;
+REDUCERS[TOGGLE_CREDITS] = toggleCredits;
 
 export default REDUCERS;

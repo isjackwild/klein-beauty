@@ -33,14 +33,17 @@ html, body {
 }
 
 .app {
-	position: absolute;
+	position: relative;
+	width: 100%;
+	height: 100%;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
 	margin: auto;
-	background-image: url('../images/portrait/background.jpg');
-	background-size: cover;
+	background: #111;
+	// perspective: 4000px;
+	overflow: hidden;
 }
 
 .app--phone {
@@ -51,6 +54,90 @@ html, body {
 	height: 96vh;
 }
 
+.flipper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transition: transform 0.4s ease-in-out;
+	// transform-style: preserve-3d;
+	// transform: translateZ(0);
+}
+
+.flipper--flipped {
+	// transform: translateZ(0) rotateY(180deg);
+}
+
+.credits {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	// backface-visibility: hidden;
+	// -webkit-backface-visibility: hidden;
+	// transform: rotateY(180deg) translateZ(0);
+	transform: scaleX(0);
+	background-image: url('../images/portrait/background.jpg');
+	background-size: cover;
+	background-position: center center;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	transition: transform 0.25s ease-in-out;
+}
+
+.flipper--flipped .credits {
+	transform: scaleX(1);
+}
+
+.credits__credit {
+	margin-bottom: 15px;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+.credits__name,
+.credits__role {
+	margin: 0;
+	line-height: 1em;
+	text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+}
+
+.credits__role {
+	font-size: 12px;
+	font-weight: 400;
+	margin-bottom: 3px;
+}
+
+.credits__name {
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.credits__credit:last-child {
+	margin-bottom: 0;
+}
+
+.flipper--flipped .credits {
+	pointer-events: all;
+}
+
+.credits__image {
+	width: 70%;
+	display: block;
+	margin: 0 auto 15px auto;
+	height: auto;
+}
+
+
 .portrait,
 .portrait__layer {
 	position: absolute;
@@ -60,6 +147,14 @@ html, body {
 	right: 0;
 	background-size: auto 100%;
 	overflow: hidden;
+}
+
+.portrait {
+	transition: transform 0.25s ease-in-out;
+}
+
+.flipper--flipped .portrait {
+	transform: scaleX(0);
 }
 
 .portrait__layer {
@@ -78,8 +173,8 @@ html, body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	height: 100%;
-	width: auto;
+	height: auto;
+	width: 100%;
 	transform: translate(-50%, -50%);
 }
 
@@ -93,8 +188,8 @@ html, body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	height: 100%;
-	width: auto;
+	height: auto;
+	width: 100%;
 	transform: translate(-50%, -50%);
 }
 
@@ -111,8 +206,8 @@ html, body {
 }
 
 .portrait__layer-sprite-spacer {
-	height: 100%;
-	width: auto;
+	height: auto;
+	width: 100%;
 	position: relative;
 	visibility: hidden;
 	opacity: 0;
@@ -132,6 +227,15 @@ html, body {
 	-webkit-overflow-scrolling: touch;
 	padding-bottom: 15px;
 	cursor: pointer;
+	transition: transform 0.33s ease-in-out;
+}
+
+.layer-selector--down {
+	transform: translateY(100%);
+}
+
+.app--desktop .layer-selector {
+	overflow: hidden;
 }
 
 .layer-selector--desktop {
@@ -286,3 +390,52 @@ html, body {
 	border-radius: 111px;
 	max-width: 98%;
 }
+
+.credits-button {
+	width: 60px;
+	height: 60px;
+	position: relative;
+	top: 15px;
+	left: 15px;
+	transition: transform 0.33s ease-in-out;
+	// transform-style: preserve-3d;
+	// z-index: 111;
+}
+
+// .credits-button--back {
+// 	transform: rotateY(180deg);
+// }
+
+.credits-button__icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-size: contain;
+	background-position: center center;
+	// backface-visibility: hidden;
+	// -webkit-backface-visibility: hidden;
+	background-repeat: no-repeat;
+	z-index: 111;
+}
+
+.credits-button__icon--hamburger {
+	background-image: url('../images/ui/credits-btn.png');
+}
+
+
+.credits-button__icon--back {
+	background-image: url('../images/ui/credits-btn-back.png');
+	// transform: rotateY(180deg);
+	display: none;
+}
+
+.credits-button--back .credits-button__icon--back {
+	display: block;
+}
+
+.credits-button--back .credits-button__icon--hamburger {
+	display: none;
+}
+

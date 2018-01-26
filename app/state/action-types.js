@@ -2,3 +2,4 @@ export const TOGGLE_LAYER = 'TOGGLE_LAYER';
 export const ON_LOADED = 'ON_LOADED';
 export const SET_BG_OFFSET = 'SET_BG_OFFSET';
 export const ON_LOAD_PROGRESS = 'ON_LOAD_PROGRESS';
+export const TOGGLE_CREDITS = 'TOGGLE_CREDITS';
