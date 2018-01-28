@@ -22,6 +22,13 @@ const View = ({ name, layerType, layerSrc, isActive }) => {
 								<img class="portrait__layer-sprite-spacer" src={PORTRAIT_SRC} />
 							</div>
 						);
+					case 'sprite-vertical':
+						return (
+							<div class="portrait__layer-sprite portrait__layer-sprite--vertical">
+								<img class="portrait__layer-sprite-image portrait__layer-sprite-image--vertical" src={layerSrc} />
+								<img class="portrait__layer-sprite-spacer portrait__layer-sprite-spacer--vertical" src={PORTRAIT_SRC} />
+							</div>
+						);
 					default:
 						return null;
 				}

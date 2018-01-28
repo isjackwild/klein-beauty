@@ -9,7 +9,6 @@ const View = ({ name, iconSrc, iconActiveSrc, iconFormat, isActive, onClick }) =
 		<li
 			class={`layer-option layer-option--${name} layer-option--${isActive ? 'active' : 'inactive'} layer-option--format-${iconFormat}`}
 			data-layer={name}
-			data-active={isActive}
 			onClick={onClick}
 		>
 			<img class="layer-option__image layer-option__image--active" src={iconActiveSrc} />

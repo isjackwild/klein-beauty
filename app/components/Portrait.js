@@ -9,9 +9,9 @@ import PortraitLayer from './PortraitLayer';
 const View = ({ isCreditsVisible }) => (
 	<div class="portrait">
 		<div class="portrait__layer portrait__layer--bg portrait__layer--active" data-active>
-			<div class="portrait__layer-sprite">
-				<img class="portrait__layer-sprite-image" src={BG_SPRITE_SRC} />
-				<img class="portrait__layer-sprite-spacer" src={PORTRAIT_SRC} />
+			<div class="portrait__background">
+				<img class="portrait__background-image" src={BG_SPRITE_SRC} />
+				<img class="portrait__background-spacer" src={PORTRAIT_SRC} />
 			</div>
 		</div>
 		<img class="portrait__layer-image" src={PORTRAIT_SRC} />

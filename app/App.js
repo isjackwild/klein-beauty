@@ -29,18 +29,18 @@ const View = ({ isPhone, isCreditsVisible, backgroundOffset, onClick }) => (
 						<h3 class="credits__role">Model + Sound</h3>
 						<h2 class="credits__name">KLEIN</h2>
 					</div>
-					<div class="credits__credit">
+					<a class="credits__credit" target="_blank" href="https://www.instagram.com/reecendean/">
 						<h3 class="credits__role">Photography</h3>
 						<h2 class="credits__name">(R+D) Reece and Dean</h2>
-					</div>
-					<div class="credits__credit">
+					</a>
+					<a class="credits__credit" target="_blank" href="https://www.isjackwild.com">
 						<h3 class="credits__role">Digital Direction + Code</h3>
 						<h2 class="credits__name">Jack Wild</h2>
-					</div>
-					<div class="credits__credit">
+					</a>
+					<a class="credits__credit" target="_blank" href="http://superficial.studio/">
 						<h3 class="credits__role">Art Direction</h3>
 						<h2 class="credits__name">Superficial</h2>
-					</div>
+					</a>
 					<div class="credits__credit">
 						<h3 class="credits__role">Creative Direction</h3>
 						<h2 class="credits__name">Louby Mcloughlin</h2>

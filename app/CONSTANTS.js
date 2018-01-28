@@ -1,6 +1,6 @@
 export const OTHER_IMAGE_ASSETS = [
 	'assets/images/portrait/klein.png',
-	'assets/images/portrait/background-glow/background-glow--sprite--01--small.jpg',
+	'assets/images/portrait/background-glow/background-glow--sprite--02.jpg',
 ];
 
 export const PORTRAIT_SRC = OTHER_IMAGE_ASSETS[0];

@@ -103,11 +103,13 @@ html, body {
 }
 
 .credits__credit {
-	margin-bottom: 15px;
+	margin-bottom: 12px;
 	text-align: center;
 	font-family: 'Poppins', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+	text-decoration: none;
+	color: #000;
 }
 
 .credits__name,
@@ -119,14 +121,14 @@ html, body {
 }
 
 .credits__role {
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: 400;
-	margin-bottom: 3px;
+	margin-bottom: 2px;
 }
 
 .credits__name {
 	font-weight: 600;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 .credits__credit:last-child {
@@ -220,19 +222,53 @@ html, body {
 	opacity: 0;
 }
 
+@keyframes background {
+	100% {
+		transform: translateY(-100%);
+	}
+}
+
+.portrait__background {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: auto;
+	width: 100%;
+	transform: translate(-50%, -50%);
+}
+
+.portrait__background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: auto;
+	width: 100%;
+	animation-duration: 2s;
+	animation-timing-function: steps(15);
+	animation-iteration-count: infinite;
+	animation-name: background;
+}
+
+.portrait__background-spacer {
+	height: 100%;
+	width: auto;
+	position: relative;
+	visibility: hidden;
+	opacity: 0;
+}
+
 .layer-selector {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 220px;
+	height: 250px;
 	overflow: scroll;
 	background-image: url('../images/ui/shelf.png');
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: bottom left;
 	-webkit-overflow-scrolling: touch;
-	padding-bottom: 15px;
 	cursor: pointer;
 	transition: transform 0.33s ease-in-out;
 }
@@ -275,7 +311,8 @@ html, body {
 .layer-selector__scroller {
 	white-space: nowrap;
 	padding: 0;
-	display: inline-block;
+	display: inline-flex;
+	align-items: flex-end;
 	margin: 0;
 	height: 100%;
 }
@@ -288,15 +325,15 @@ html, body {
 }
 
 .layer-option--format-wide {
-	height: 40%;
+	height: 100px;
 }
 
 .layer-option--format-regular {
-	height: 60%;
+	height: 180px;
 }
 
 .layer-option--format-tall {
-	height: 100%;
+	height: 250px;
 }
 
 .layer-option:last-child {
@@ -304,6 +341,7 @@ html, body {
 }
 
 .layer-option--active {
+
 }
 
 .layer-option__image {
@@ -326,7 +364,7 @@ html, body {
 	bottom: 0;
 	right: 0;
 	margin: auto;
-	opacity: 0.1;
+	opacity: 0;
 }
 
 .layer-option--active .layer-option__image--active {
