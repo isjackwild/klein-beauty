@@ -40,7 +40,7 @@ html, body {
 }
 
 .app {
-	position: relative;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -85,7 +85,7 @@ html, body {
 	// backface-visibility: hidden;
 	// -webkit-backface-visibility: hidden;
 	// transform: rotateY(180deg) translateZ(0);
-	transform: scaleX(0);
+	transform: translateX(100%);
 	background-image: url('../images/portrait/background.jpg');
 	background-size: cover;
 	background-position: center center;
@@ -99,7 +99,7 @@ html, body {
 }
 
 .flipper--flipped .credits {
-	transform: scaleX(1);
+	transform: translateX(0);
 }
 
 .credits__credit {
@@ -110,6 +110,10 @@ html, body {
 	text-rendering: optimizeLegibility;
 	text-decoration: none;
 	color: #000;
+
+	.app--desktop & {
+		margin-bottom: 18px;
+	}
 }
 
 .credits__name,
@@ -124,11 +128,20 @@ html, body {
 	font-size: 11px;
 	font-weight: 400;
 	margin-bottom: 2px;
+
+	.app--desktop & {
+		font-size: 13px;
+		margin-bottom: 4px;
+	}
 }
 
 .credits__name {
 	font-weight: 600;
 	font-size: 15px;
+
+	.app--desktop & {
+		font-size: 17px;
+	}
 }
 
 .credits__credit:last-child {
@@ -144,6 +157,11 @@ html, body {
 	display: block;
 	margin: 0 auto 15px auto;
 	height: auto;
+
+	.app--desktop & {
+		width: 85%;
+		margin-bottom: 17px;
+	}
 }
 
 
@@ -159,11 +177,11 @@ html, body {
 }
 
 .portrait {
-	transition: transform 0.25s ease-in-out;
+	transition: opacity 0.25s ease-in-out;
 }
 
 .flipper--flipped .portrait {
-	transform: scaleX(0);
+	opacity: 0;
 }
 
 .portrait__layer {
@@ -247,6 +265,11 @@ html, body {
 	animation-timing-function: steps(15);
 	animation-iteration-count: infinite;
 	animation-name: background;
+	animation-play-state: paused;
+}
+
+.portrait__background-image--playing {
+	animation-play-state: running;	
 }
 
 .portrait__background-spacer {
@@ -315,6 +338,7 @@ html, body {
 	align-items: flex-end;
 	margin: 0;
 	height: 100%;
+	padding: 0 15px;
 }
 
 .layer-option {
@@ -403,13 +427,14 @@ html, body {
 }
 
 .loader__inner--hidden {
-	transform: translateY(-109%) rotate(-4deg);
+	// transform: translateY(-109%) rotate(-4deg);
 	pointer-events: none;
 }
 
 .loader__image {
-	width: 500px;
+	width: 410px;
 	max-width: 80vw;
+	margin-bottom: 15px;
 }
 
 .loader__progress {
@@ -421,7 +446,7 @@ html, body {
 }
 
 .loader__progress-surround {
-	width: 500px;
+	width: 330px;
 	max-width: 80vw;
 	position: relative;
 }
