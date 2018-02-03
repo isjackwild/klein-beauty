@@ -427,7 +427,7 @@ html, body {
 }
 
 .loader__inner--hidden {
-	// transform: translateY(-109%) rotate(-4deg);
+	transform: translateY(-109%) rotate(-4deg);
 	pointer-events: none;
 }
 
