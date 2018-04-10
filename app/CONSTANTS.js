@@ -13,7 +13,7 @@ export const LAYERS = [
 		iconSrc: 'assets/images/ui/makeup-lipgloss.png',
 		iconActiveSrc: 'assets/images/ui/makeup-lipgloss-on.png',
 		iconFormat: 'tall',
-		layerSrc: 'assets/images/portrait/Klein-Layer-Lips/klein-layer-lips--01.gif',
+		layerSrc: 'assets/images/portrait/klein-layer-lips/klein-layer-lips.gif',
 		layerType: 'image',
 	},
 	{

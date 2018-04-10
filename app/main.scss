@@ -67,9 +67,7 @@ html, body {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	transition: transform 0.4s ease-in-out;
-	// transform-style: preserve-3d;
-	// transform: translateZ(0);
+	transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)
 }
 
 .flipper--flipped {
@@ -82,9 +80,6 @@ html, body {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	// backface-visibility: hidden;
-	// -webkit-backface-visibility: hidden;
-	// transform: rotateY(180deg) translateZ(0);
 	transform: translateX(100%);
 	background-image: url('../images/portrait/background.jpg');
 	background-size: cover;
@@ -95,7 +90,7 @@ html, body {
 	align-items: center;
 	justify-content: center;
 	pointer-events: none;
-	transition: transform 0.25s ease-in-out;
+	transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .flipper--flipped .credits {
@@ -177,7 +172,7 @@ html, body {
 }
 
 .portrait {
-	transition: opacity 0.25s ease-in-out;
+	transition: opacity 0.33s ease-in-out;
 }
 
 .flipper--flipped .portrait {
@@ -293,7 +288,8 @@ html, body {
 	background-position: bottom left;
 	-webkit-overflow-scrolling: touch;
 	cursor: pointer;
-	transition: transform 0.33s ease-in-out;
+	// transition: transform 0.33s ease-in-out;
+	transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)
 }
 
 .layer-selector--down {
@@ -468,14 +464,17 @@ html, body {
 	position: relative;
 	top: 15px;
 	left: 15px;
-	transition: transform 0.33s ease-in-out;
-	// transform-style: preserve-3d;
-	// z-index: 111;
+	cursor: pointer;
+	transition:
+		opacity 0.08s ease,
+		filter 0.08s ease,
+		transform 0.33s ease-in-out;
 }
 
-// .credits-button--back {
-// 	transform: rotateY(180deg);
-// }
+.credits-button:active {
+	filter: brightness(0.75);
+	opacity: 0.8;
+}
 
 .credits-button__icon {
 	position: absolute;
@@ -485,8 +484,6 @@ html, body {
 	right: 0;
 	background-size: contain;
 	background-position: center center;
-	// backface-visibility: hidden;
-	// -webkit-backface-visibility: hidden;
 	background-repeat: no-repeat;
 	z-index: 111;
 }
@@ -498,7 +495,6 @@ html, body {
 
 .credits-button__icon--back {
 	background-image: url('../images/ui/credits-btn-back.png');
-	// transform: rotateY(180deg);
 	display: none;
 }
 

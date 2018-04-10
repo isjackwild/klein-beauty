@@ -39,7 +39,7 @@ class Comp extends Component {
 					ref={r => this.el = r}
 				>
 					<ul class={`layer-selector__scroller layer-selector__scroller--${isDesktop ? 'desktop' : 'mobile'}`}>
-						{LAYERS.map(l => <LayerOption key={l.name} layer={l} />)}
+						{LAYERS.map(l => <LayerOption key={l.name} layer={l} iscroll={this.iScroll} />)}
 					</ul>
 				</div>
 			</div>

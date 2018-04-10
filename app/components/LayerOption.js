@@ -4,12 +4,12 @@ import { connect } from 'preact-redux';
 
 import { toggleLayer } from '../state/actions';
 
-const View = ({ name, iconSrc, iconActiveSrc, iconFormat, isActive, onClick }) => {
+const View = ({ name, iconSrc, iconActiveSrc, iconFormat, isActive, onClick, iscroll }) => {
 	return (
 		<li
 			class={`layer-option layer-option--${name} layer-option--${isActive ? 'active' : 'inactive'} layer-option--format-${iconFormat}`}
 			data-layer={name}
-			onClick={onClick}
+			onClick={() => iscroll.moved ? null : onClick()}
 		>
 			<img class="layer-option__image layer-option__image--active" src={iconActiveSrc} />
 			<img class="layer-option__image layer-option__image--inactive" src={iconSrc} />
