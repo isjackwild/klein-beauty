@@ -27,7 +27,7 @@ class Comp extends Component {
 
 	componentDidUpdate() {
 		setTimeout(() => {
-			this.iScroll.refresh();
+			if (this.iScroll) this.iScroll.refresh();
 		}, 0);
 	}
 

@@ -9,7 +9,7 @@ const View = ({ name, iconSrc, iconActiveSrc, iconFormat, isActive, onClick, isc
 		<li
 			class={`layer-option layer-option--${name} layer-option--${isActive ? 'active' : 'inactive'} layer-option--format-${iconFormat}`}
 			data-layer={name}
-			onClick={() => iscroll.moved ? null : onClick()}
+			onClick={(iscroll && iscroll.moved) ? null : onClick}
 		>
 			<img class="layer-option__image layer-option__image--active" src={iconActiveSrc} />
 			<img class="layer-option__image layer-option__image--inactive" src={iconSrc} />

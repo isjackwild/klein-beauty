@@ -15,6 +15,14 @@ html, body {
 	height: 100%;
 }
 
+body.pointer {
+	cursor: pointer !important;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
 .background__desert {
 	background-image: url('../images/background-desktop.jpg');
 	background-size: cover;
